@@ -1,7 +1,10 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  // ...
+  compatibilityDate: '2026-03-20',
+  devServer: {
+    port: 3003
+  },
   css: ['~/assets/css/tailwind.css'],
 
   vite: {
@@ -10,7 +13,7 @@ export default defineNuxtConfig({
     ],
   },
 
-  modules: ['shadcn-nuxt'],
+  modules: ['shadcn-nuxt', '@pinia/nuxt', '@vueuse/nuxt'],
   shadcn: {
     /**
      * Prefix for all the imported component.
