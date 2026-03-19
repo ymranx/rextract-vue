@@ -2,7 +2,7 @@
   <div class="space-y-4">
     <div class="flex justify-between items-center mb-8">
       <h1 class="text-3xl font-bold tracking-tight">My Extractions</h1>
-      <Button class="bg-[#0f172a] text-white hover:bg-[#1e293b]">
+      <Button class="bg-[#0f172a] text-white hover:bg-[#1e293b]" @click="isDialogOpen = true">
         <Plus class="w-4 h-4 mr-2" />
         New Extraction
       </Button>
@@ -50,16 +50,19 @@
         <p class="text-muted-foreground">No extractions found. Click "New Extraction" to start.</p>
       </div>
     </div>
+    
+    <NewExtractDialog v-model:is-open="isDialogOpen" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { Plus, MoreHorizontal, FileText } from 'lucide-vue-next'
 import { useReceiptsStore } from '~/stores/receipts'
 
 const store = useReceiptsStore()
 const receipts = computed(() => store.receipts)
+const isDialogOpen = ref(false)
 
 const deleteReceipt = (id: string) => {
   store.deleteReceipt(id)
