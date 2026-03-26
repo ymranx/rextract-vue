@@ -3,7 +3,9 @@
     <div class="flex items-center gap-3">
       <Avatar>
         <AvatarImage src="" alt="User profile" />
-        <AvatarFallback>IP</AvatarFallback>
+        <AvatarFallback>
+          <User class="w-full h-full p-2" />
+        </AvatarFallback>
       </Avatar>
       <div class="flex flex-col">
         <span class="text-sm font-semibold">Imran Personal</span>
@@ -14,5 +16,7 @@
 </template>
 
 <script setup lang="ts">
+import { User } from 'lucide-vue-next'
 // Avatar components are auto-imported by Nuxt
 </script>
+
