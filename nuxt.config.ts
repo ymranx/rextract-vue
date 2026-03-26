@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     ],
   },
 
-  modules: ['shadcn-nuxt', '@pinia/nuxt', '@vueuse/nuxt'],
+  modules: ['shadcn-nuxt', '@pinia/nuxt', '@vueuse/nuxt', '@nuxt/test-utils/module'],
   shadcn: {
     /**
      * Prefix for all the imported component.
